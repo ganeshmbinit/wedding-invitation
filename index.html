@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh & Pooja's Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdfbf7;
+            color: #4a4a4a;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=1200') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .countdown-container {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: -50px auto 50px auto;
+            border-radius: 10px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .countdown-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #8b5a2b;
+            font-weight: 600;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .time-box {
+            flex: 1;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #b8860b;
+        }
+
+        .time-box label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #7a7a7a;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #b8860b;
+            margin-bottom: 20px;
+        }
+
+        .invitation-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .events-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background-color: #fff;
+            border: 1px solid #f0e6d2;
+            border-radius: 8px;
+            padding: 30px;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card h3 {
+            color: #8b5a2b;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0e6d2;
+            padding-bottom: 10px;
+        }
+
+        .event-card p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+
+        .venue-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #b8860b;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .venue-btn:hover {
+            background-color: #8b5a2b;
+        }
+
+        .family-section {
+            background-color: #f9f5eb;
+            padding: 60px 20px;
+        }
+
+        .family-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .family-column {
+            flex: 1;
+            min-width: 280px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .family-column h3 {
+            color: #b8860b;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .kids-corner {
+            margin-top: 30px;
+            font-style: italic;
+            color: #c7923e;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 30px;
+            background-color: #8b5a2b;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 2.2rem; }
+            .time-box span { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2>Shuba Vivaha</h2>
+        <h1>Ganesh & Pooja</h1>
+        <p>Are getting married on Sunday, November 22, 2026</p>
+    </div>
+
+    <!-- Countdown Section -->
+    <div class="countdown-container">
+        <div class="countdown-title">Counting down to the big day</div>
+        <div class="countdown" id="wedding-countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <label>Days</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <label>Hours</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <label>Mins</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <label>Secs</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invitation Message -->
+    <div class="section">
+        <h2>Cordially Invited</h2>
+        <p class="invitation-text">
+            "Our sincere and humble invitation to you and your family members. <br>
+            Please join us with your loved ones to bless the newlywed couple on their auspicious day."
+        </p>
+
+        <!-- Events Grid -->
+        <div class="events-grid">
+            <!-- Reception -->
+            <div class="event-card">
+                <h3>Arathakshathe (Reception)</h3>
+                <p><strong>Saturday, Nov 21, 2026</strong></p>
+                <p>Starting from 7:30 PM onwards</p>
+            </div>
+            <!-- Wedding -->
+            <div class="event-card">
+                <h3>Wedding Muhurtham</h3>
+                <p><strong>Sunday, Nov 22, 2026</strong></p>
+                <p>9:30 AM to 10:08 AM</p>
+            </div>
+        </div>
+
+        <!-- Venue Details -->
+        <div style="margin-top: 40px;">
+            <h2>The Venue</h2>
+            <p><strong>Srimati Kamalamma & Sri Gurushantappa Samudaya Bhavana</strong></p>
+            <p>Kurki - Hirethogaleri, Davanagere Taluk & District</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Srimati+Kamalamma+Sri+Gurushantappa+Samudaya+Bhavana+Kurki" target="_blank" class="venue-btn">View on Google Maps</a>
+        </div>
+    </div>
+
+    <!-- Family Grid -->
+    <div class="family-section">
+        <h2>With Best Compliments From</h2>
+        <div class="family-grid">
+            <div class="family-column">
+                <h3>Groom's Parents</h3>
+                <p><strong>Srimati Parimala & Sri B.S. Manjunath</strong></p>
+                <p style="font-size: 0.9rem; color: #777; margin-top: 5px;">Attigere, Davanagere Taluk</p>
+                <p style="font-size: 0.9rem; color: #555; margin-top: 8px;">📞 9448547878, 9980375078</p>
+            </div>
+            <div class="family-column">
+                <h3>Bride's Parents</h3>
+                <p><strong>Srimati Shivamma K.J. & Sri Gowdru Siddeshwara G.R.</strong></p>
+                <p style="font-size: 0.9rem; color: #777; margin-top: 5px;">Nelligere Village, Davanagere Taluk</p>
+            </div>
+        </div>
+
+        <div class="kids-corner">
+            <p>"Come to our Uncle's wedding!" — Ava, Dwithi, Tharkshya & Dhuvan</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Ganesh ❤️ Pooja | November 22, 2026</p>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        const weddingDate = new Date("Nov 22, 2026 09:30:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("wedding-countdown").innerHTML = "<p style='font-size: 1.5rem; color: #b8860b; font-weight: bold; width: 100%;'>The Wedding Day Has Arrived!</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
